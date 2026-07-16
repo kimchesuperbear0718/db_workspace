@@ -1,0 +1,18 @@
+SQL> -- 프로젝트에 사용할 데이터베이스 구축하자
+SQL> show user
+USER은 "SYSTEM"입니다
+SQL> create tablespace javaspace
+  2  datafile 'C:\app\user\product\21c\oradata\XE\javaspace.dbf'
+  3  size 10M;
+
+테이블스페이스가 생성되었습니다.
+
+SQL> -- 사용자 생성하기
+SQL> create user dev
+  2  identified by 1234
+  3  default tablespace javaspace
+  4  quota unlimited on javaspace;
+
+사용자가 생성되었습니다.
+
+SQL> spool off
